@@ -2,9 +2,19 @@ name: Assignment-1
 on: push
 jobs:
   build:
-    runs-on: windows-2019
+    runs-on: windows-latest
     steps:
       - name: Check out repo        
         uses: actions/checkout@v2
       - run: |
           ./a.ps1
+      - name : Zip artifacts
+        uses: papeloto/action-zip@v1
+        with:
+          files: a.ps1
+          dest: output.zip
+      - name : Export to artifactory
+      - run: echo "hello"
+
+
+
