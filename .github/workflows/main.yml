@@ -11,7 +11,7 @@ jobs:
     - name : Zip artifacts
       run : |
         Set-Variable -Name build_version -Value "testing.${{ github.run_number }}.zip"
-        Compress-Archive -Path test -DestinationPath .\$build_version
+        Compress-Archive -Path / -DestinationPath .\$build_version
         ls
 
 
