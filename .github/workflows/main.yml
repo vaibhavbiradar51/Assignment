@@ -8,11 +8,14 @@ jobs:
       uses: actions/checkout@v2
     - run: |
         ./a.ps1
+      working-directory: 'Assignment \'
     - name : Zip artifacts
       run : |
         Set-Variable -Name build_version -Value "testing.${{ github.run_number }}.zip"
-        Compress-Archive a/ -DestinationPath .\$build_version
+        Compress-Archive a -DestinationPath .\$build_version
         ls
+      working-directory: 'Assignment \'
+    
 
 
 
