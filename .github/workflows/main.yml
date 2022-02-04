@@ -4,15 +4,15 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - name: Check out repo        
-        uses: actions/checkout@v2
-      - run: |
-          ./a.ps1
-      - name : Zip artifacts
-       run : |
-          Set-Variable -Name build_version -Value "testing.${{ github.run_number }}.zip"
-          Compress-Archive -Path test -DestinationPath .\$build_version
-          ls
+    - name: Check out repo        
+      uses: actions/checkout@v2
+    - run: |
+        ./a.ps1
+    - name : Zip artifacts
+      run : |
+        Set-Variable -Name build_version -Value "testing.${{ github.run_number }}.zip"
+        Compress-Archive -Path test -DestinationPath .\$build_version
+        ls
 
 
 
