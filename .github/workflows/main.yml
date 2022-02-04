@@ -9,10 +9,11 @@ jobs:
       - run: |
           ./a.ps1
       - name : Zip artifacts
-      - uses: papeloto/action-zip@v1
-        with:
-          files: a.ps1
-          dest: output.zip
+       run : |
+          Set-Variable -Name build_version -Value "testing.${{ github.run_number }}.zip"
+          Compress-Archive -Path test -DestinationPath .\$build_version
+          ls
+
 
 
 
