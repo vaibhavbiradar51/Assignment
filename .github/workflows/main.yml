@@ -13,8 +13,7 @@ jobs:
         with:
           files: a.ps1
           dest: output.zip
-      - name : Export to artifactory
-      - run: echo "hello"
+
 
 
 
