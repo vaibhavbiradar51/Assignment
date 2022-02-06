@@ -6,12 +6,13 @@ jobs:
     steps:
     - name: Check out repo        
       uses: actions/checkout@v2
-    - uses: jfrog/setup-jfrog-cli@v1
-      env:
-        JF_ARTIFACTORY_1: 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
-    - run: |
-        # Ping the server
-        jfrog rt ping
+    - name: JFrog CLI
+      # You may pin to the exact commit or the version.
+      # uses: Deepakanandrao/jfrog-cli@25346328751ee784df9acb5911fdf3858805fa35
+      uses: Deepakanandrao/jfrog-cli@v3
+      with:
+        # Jfrog Artifactory cli command e.g.  `jfrog rt ping`
+        cli_cmd: jfrog rt ping
 
 
 
