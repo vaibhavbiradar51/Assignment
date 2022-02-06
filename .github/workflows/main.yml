@@ -6,13 +6,6 @@ jobs:
     steps:
     - name: Check out repo        
       uses: actions/checkout@v2
-    - run: |
-        ./a.ps1
-    - name : Zip artifacts
-      run : |
-        Set-Variable -Name build_version -Value "testing.${{ github.run_number }}.zip"
-        Compress-Archive /a -DestinationPath .\$build_version
-        ls
     - uses: jfrog/setup-jfrog-cli@v1
       env:
         JF_ARTIFACTORY_1: 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
