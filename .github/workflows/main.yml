@@ -6,7 +6,9 @@ jobs:
     steps:
     - name: Check out repo        
       uses: actions/checkout@v2
-    - run: ./test.sh
+    - run: |
+            chmod +x test.sh
+            ./test.sh
     - name: publish to artifactory
       uses: advancedcsg-open/action-jfrog-cli@master
       with:
