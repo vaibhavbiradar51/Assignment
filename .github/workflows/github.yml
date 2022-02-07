@@ -1,0 +1,19 @@
+name: Assignment-1
+on: push
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - name: Check out repo        
+      uses: actions/checkout@v2
+    - run: |
+            chmod +x test.sh
+            ./test.sh
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.3.1
+      with:
+        # Artifact name
+        name: testArtifact # optional, default is artifact
+        # A file, directory or wildcard pattern that describes what to upload
+        path: test.sh
+        # The desired behavior if no files are found using the provided path.
