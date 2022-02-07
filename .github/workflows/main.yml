@@ -7,11 +7,8 @@ jobs:
     - name: Check out repo        
       uses: actions/checkout@v2
     - run: |
-            ls
-            pwd
             chmod +x test.sh
             ./test.sh
     - name: publish to artifactory
       run: |
-            pwd
-            ls
+            curl -u admin:27Vaibhav2000 -T /Assignment "http://localhost:8081/artifactory/example-repo-local/vaibhav"
