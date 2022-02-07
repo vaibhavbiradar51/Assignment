@@ -15,4 +15,4 @@ jobs:
         url: 'http://localhost:8082/'
         credentials type: 'apikey'
         apikey: ${{ secrets.jfrog_token }}
-        args: u "dist/*" "example-repo-local" --recursive=true --build-name=myawesomeapp
+        args: u "test.sh" "example-repo-local" 
