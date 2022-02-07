@@ -6,6 +6,7 @@ jobs:
     steps:
     - name: Check out repo        
       uses: actions/checkout@v2
+    - run: ./test.sh
     - name: publish to artifactory
       uses: advancedcsg-open/action-jfrog-cli@master
       with:
@@ -13,3 +14,4 @@ jobs:
         credentials type: 'username'
         user: 'admin'
         password: '27Vaibhav2000'
+        
