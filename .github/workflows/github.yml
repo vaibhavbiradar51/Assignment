@@ -1,4 +1,4 @@
-name: Assignment-1
+name: Github-Assignment-1
 on: push
 jobs:
   build:
