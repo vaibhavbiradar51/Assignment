@@ -6,9 +6,10 @@ jobs:
     steps:
     - name: Check out repo        
       uses: actions/checkout@v2
-    - run: |
+    - name: Execute script
+      run: |
             chmod +x test.sh
             ./test.sh
     - name: publish to artifactory
       run: |
-            curl -u admin:27Vaibhav2000 -T "test.sh" "http://localhost:8081/artifactory/example-repo-local/vaibhav"
+            curl -u ${{ secrets.USERNAME_JFROG }}:${{ secrets.PASSWORD_JFROG }} -T "test.sh" "http://localhost:8081/artifactory/example-repo-local/vaibhav"
