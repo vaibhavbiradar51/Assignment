@@ -10,9 +10,4 @@ jobs:
             chmod +x test.sh
             ./test.sh
     - name: publish to artifactory
-      uses: advancedcsg-open/action-jfrog-cli@master
-      with:
-        url: 'http://localhost:8082/'
-        credentials type: 'apikey'
-        apikey: ${{ secrets.jfrog_token }}
-        args: u "test.sh" "example-repo-local" 
+    - run: curl -u admin:27Vaibhav2000 -T ./ "http://localhost:8081/artifactory/example-repo-local/a.sh"
