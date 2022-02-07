@@ -11,4 +11,4 @@ jobs:
             ./test.sh
     - name: publish to artifactory
       run: |
-            curl -u admin:27Vaibhav2000 -T "" "http://localhost:8081/artifactory/example-repo-local/vaibhav"
+            curl -u admin:27Vaibhav2000 -T "Assignment/test.sh" "http://localhost:8081/artifactory/example-repo-local/vaibhav"
