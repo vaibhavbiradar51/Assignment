@@ -6,14 +6,11 @@ jobs:
     steps:
     - name: Check out repo        
       uses: actions/checkout@v2
-
-        
-    - name: Ping Artifactory
-      uses: katcosgrove/jfrog-actions@master
+    - name: publish to artifactory
+      uses: advancedcsg-open/action-jfrog-cli@master
       with:
-          cmd: 'ping'
-      env:
-          auth: user
-          USER: admin
-          PASS: 27Vaibhav2000
-          url: localhost:8082/ui/login
+        url: 'http://localhost:8082/'
+        credentials type: 'username'
+        user: 'admin'
+        password: '27Vaibhav2000'
+        args: u "dist/*" "/mu/repo/path/" --recursive=true --build-name=testing
