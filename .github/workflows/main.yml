@@ -13,7 +13,6 @@ jobs:
       uses: advancedcsg-open/action-jfrog-cli@master
       with:
         url: 'http://localhost:8082/'
-        credentials type: 'username'
-        user: 'admin'
-        password: '27Vaibhav2000'
-        
+        credentials type: 'apikey'
+        apikey: ${{ secrets.jfrog_token }}
+        args: u "dist/*" "/mu/repo/path/" --recursive=true --build-name=myawesomeapp
