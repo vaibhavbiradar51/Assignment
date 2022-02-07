@@ -6,13 +6,14 @@ jobs:
     steps:
     - name: Check out repo        
       uses: actions/checkout@v2
-    - name: JFrog CLI
-      # You may pin to the exact commit or the version.
-      # uses: Deepakanandrao/jfrog-cli@25346328751ee784df9acb5911fdf3858805fa35
-      uses: Deepakanandrao/jfrog-cli@v3
+
+        
+    - name: Ping Artifactory
+      uses: katcosgrove/jfrog-actions@master
       with:
-        # Jfrog Artifactory cli command e.g.  `jfrog rt ping`
-        cli_cmd: jfrog rt ping
-
-
-
+          cmd: 'ping'
+      env:
+          auth: user
+          USER: admin
+          PASS: 27Vaibhav2000
+          url: localhost:8082/ui/login
